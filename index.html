@@ -22,16 +22,6 @@ html{scroll-behavior:smooth}
 body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{text-decoration:none}
 
-/* ── VARIANT LOGIC ── */
-[data-v="A"] .vb{display:none!important}
-[data-v="B"] .va{display:none!important}
-
-/* ── SWITCHER ── */
-#sw{position:fixed;bottom:24px;right:24px;z-index:999;background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:5px;display:flex;gap:4px;box-shadow:0 8px 28px rgba(28,35,48,.13)}
-#sw button{font-family:var(--body);font-size:12px;font-weight:600;padding:7px 16px;border-radius:50px;border:none;cursor:pointer;color:var(--muted);background:transparent;transition:all .2s}
-#sw button.on{background:var(--accent);color:#fff}
-#sw label{display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;border-right:1px solid var(--border)}
-
 /* ── NAV ── */
 nav{position:sticky;top:0;z-index:100;background:rgba(245,247,251,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px}
 .logo{font-family:var(--head);font-size:20px;font-weight:800;color:var(--accent);letter-spacing:-.5px}
@@ -41,25 +31,12 @@ nav ul a:hover{color:var(--text)}
 .btn-dl{background:var(--accent);color:#fff;font-family:var(--body);font-size:14px;font-weight:600;padding:10px 22px;border-radius:10px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
 
 /* ── BUTTONS ── */
-.bp{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-family:var(--body);font-size:15px;font-weight:600;padding:13px 22px;border-radius:12px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
-.bp:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(26,115,232,.28)}
-.bs{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);font-family:var(--body);font-size:15px;font-weight:600;padding:13px 22px;border-radius:12px;border:1.5px solid var(--border);cursor:pointer;transition:all .15s}
-.bs:hover{border-color:var(--am);color:var(--accent)}
 .bpw{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--accent);font-family:var(--body);font-size:15px;font-weight:700;padding:13px 24px;border-radius:12px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
 .bpw:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,.13)}
 .bow{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:var(--body);font-size:15px;font-weight:600;padding:13px 24px;border-radius:12px;border:1.5px solid rgba(255,255,255,.45);cursor:pointer}
 .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 
-/* ── HERO A — split ── */
-.ha{max-width:1240px;margin:0 auto;padding:80px 48px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:56px;min-height:calc(100vh - 64px)}
-.ha-t .eye{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-.ha-t h1{font-family:var(--head);font-size:58px;font-weight:800;line-height:1.07;letter-spacing:-2px;margin-bottom:20px}
-.ha-t h1 em{font-style:normal;color:var(--accent)}
-.ha-t .sub{font-size:17px;color:var(--muted);line-height:1.65;margin-bottom:32px;max-width:430px}
-.ha-t .note{margin-top:13px;font-size:13px;color:var(--muted)}
-.ha-img{display:flex;justify-content:center;align-items:flex-end}
-
-/* ── HERO B — gradient ── */
+/* ── HERO ── */
 .hb{background:linear-gradient(152deg,#0f4eab 0%,#1A73E8 50%,#4a90e0 100%);padding:90px 48px 0;text-align:center;color:#fff;overflow:hidden}
 .hb .eye{display:inline-block;background:rgba(255,255,255,.18);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:50px;margin-bottom:20px}
 .hb h1{font-family:var(--head);font-size:66px;font-weight:800;line-height:1.05;letter-spacing:-2.5px;margin-bottom:18px}
@@ -85,14 +62,7 @@ nav ul a:hover{color:var(--text)}
 .sh h2{font-family:var(--head);font-size:38px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:12px}
 .sh p{font-size:16px;color:var(--muted);line-height:1.65}
 
-/* ── FEATURES A ── */
-.fga{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.fca{background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:24px 20px}
-.ficon{width:44px;height:44px;border-radius:12px;background:var(--as);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.fca h3{font-family:var(--head);font-size:17px;font-weight:700;margin-bottom:7px}
-.fca p{font-size:13.5px;color:var(--muted);line-height:1.6}
-
-/* ── FEATURES B ── */
+/* ── FEATURES ── */
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding:56px 0;border-bottom:1px solid var(--border)}
 .frow:last-child{border-bottom:none}
 .frow.rev>:first-child{order:2}.frow.rev>:last-child{order:1}
@@ -102,8 +72,6 @@ nav ul a:hover{color:var(--text)}
 .fvis{border-radius:22px;height:210px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
 
 /* ── SCREENSHOTS ── */
-.ph-row{display:flex;justify-content:center;gap:26px;align-items:flex-end}
-.ph-row .pf:nth-child(2){transform:translateY(-26px)}
 .ss-b{background:linear-gradient(152deg,#0f4eab 0%,#1A73E8 100%)}
 .ss-b .sh .eye{color:rgba(255,255,255,.65)}
 .ss-b .sh h2{color:#fff}
@@ -113,7 +81,7 @@ nav ul a:hover{color:var(--text)}
 .ph-row-b .pf:nth-child(2){transform:translateY(-20px)}
 .ph-row-b .pf:nth-child(3){transform:rotate(4deg) translateY(20px)}
 
-/* ── HOUSE PASS A ── */
+/* ── HOUSE PASS ── */
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:780px;margin:0 auto}
 .pc{border:1.5px solid var(--border);border-radius:22px;padding:28px}
 .pc.pro{background:linear-gradient(145deg,#0f4eab,#1A73E8);border-color:transparent;color:#fff}
@@ -127,18 +95,6 @@ nav ul a:hover{color:var(--text)}
 .plist li{font-size:13px;display:flex;gap:8px;align-items:flex-start;line-height:1.5}
 .plist li::before{content:'✓';font-weight:700;color:var(--accent);flex-shrink:0;margin-top:1px}
 .pc.pro .plist li::before{color:rgba(255,255,255,.85)}
-
-/* ── HOUSE PASS B ── */
-.hpb{background:#0c1526}
-.hpb .sh .eye{color:var(--am)}
-.hpb .sh h2{color:#fff}
-.hpb .sh p{color:rgba(255,255,255,.55)}
-.hpbg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:880px;margin:0 auto}
-.hpbc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:17px;padding:22px}
-.hpbc h4{font-family:var(--head);font-size:15px;font-weight:700;color:#fff;margin-bottom:5px}
-.hpbc p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.6}
-.hpb-cta{text-align:center;margin-top:44px}
-.hpb-note{font-size:13px;color:rgba(255,255,255,.38);margin-top:11px}
 
 /* ── FAQ ── */
 .faq{max-width:660px;margin:0 auto}
@@ -161,14 +117,7 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:42px 48px}
 .fcopy{font-size:12px}
 </style>
 </head>
-<body data-v="A">
-
-<!-- SWITCHER -->
-<div id="sw">
-  <label>Variation</label>
-  <button class="on" onclick="sv('A')">A — Split</button>
-  <button onclick="sv('B')">B — Bold</button>
-</div>
+<body>
 
 <!-- NAV -->
 <nav>
@@ -185,38 +134,8 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:42px 48px}
   </a>
 </nav>
 
-<!-- ═══════════════════════════════════
-     HERO
-     ═══════════════════════════════════ -->
-
-<!-- HERO A: split -->
-<section class="va">
-  <div class="ha">
-    <div class="ha-t">
-      <p class="eye">Available on iOS</p>
-      <h1>Stop the<br><em>chore wars.</em></h1>
-      <p class="sub">FairEnough makes sharehouse life actually fair — split bills, track chores, and stay in sync without the group-chat drama.</p>
-      <div class="cta">
-        <a href="#" class="bp">
-          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          App Store
-        </a>
-        <a href="#features" class="bs">See features →</a>
-      </div>
-      <p class="note">Free to download · House Pass coming soon</p>
-    </div>
-    <div class="ha-img">
-      <div class="pf lg">
-        <div class="isle"></div>
-        <div class="pfc"><div id="ph-home-a"></div></div>
-        <div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HERO B: gradient -->
-<section class="hb vb">
+<!-- HERO -->
+<section class="hb">
   <span class="eye">Available on iOS</span>
   <h1>Your sharehouse,<br>sorted.</h1>
   <p class="sub">Bills split fairly. Chores tracked honestly. Shopping done together. FairEnough keeps your house running smoothly.</p>
@@ -230,62 +149,25 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:42px 48px}
   <div class="hb-phones">
     <div class="pf" style="transform:translateY(18px) rotate(-5deg)">
       <div class="isle"></div>
-      <div class="pfc"><div id="ph-fin-b"></div></div>
+      <div class="pfc"><div id="ph-fin"></div></div>
       <div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div>
     </div>
     <div class="pf lg" style="transform:translateY(-18px)">
       <div class="isle"></div>
-      <div class="pfc"><div id="ph-home-b"></div></div>
+      <div class="pfc"><div id="ph-home"></div></div>
       <div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div>
     </div>
     <div class="pf" style="transform:translateY(18px) rotate(5deg)">
       <div class="isle"></div>
-      <div class="pfc"><div id="ph-chores-b"></div></div>
+      <div class="pfc"><div id="ph-chores"></div></div>
       <div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════
-     FEATURES
-     ═══════════════════════════════════ -->
+<!-- FEATURES -->
 <section id="features">
-
-  <!-- A: 4-col grid -->
-  <div class="sec sec-w va">
-    <div class="wrap">
-      <div class="sh">
-        <p class="eye">Everything your house needs</p>
-        <h2>Built for real sharehouses.</h2>
-        <p>Not some hypothetical household where everyone already does their fair share.</p>
-      </div>
-      <div class="fga">
-        <div class="fca">
-          <div class="ficon"><svg width="21" height="21" fill="none" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-          <h3>Chores</h3>
-          <p>Assign and rotate house tasks. The House Fairness score keeps everyone accountable over a rolling 28-day window.</p>
-        </div>
-        <div class="fca">
-          <div class="ficon"><svg width="21" height="21" fill="none" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-          <h3>Finance</h3>
-          <p>Log shared expenses and split equally or custom. See who owes what and settle up — no more awkward follow-up texts.</p>
-        </div>
-        <div class="fca">
-          <div class="ficon"><svg width="21" height="21" fill="none" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
-          <h3>Shopping</h3>
-          <p>One shared list that everyone adds to. No more "I thought you were getting it" at the checkout.</p>
-        </div>
-        <div class="fca">
-          <div class="ficon"><svg width="21" height="21" fill="none" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-          <h3>Messenger</h3>
-          <p>House-wide threads, polls, and nudges. A dedicated space that isn't buried in your group chat.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- B: alternating rows -->
-  <div class="sec vb">
+  <div class="sec">
     <div class="wrap">
       <div class="sh">
         <p class="eye">Everything your house needs</p>
@@ -348,29 +230,9 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:42px 48px}
   </div>
 </section>
 
-<!-- ═══════════════════════════════════
-     SCREENSHOTS
-     ═══════════════════════════════════ -->
+<!-- SCREENSHOTS -->
 <section id="screenshots">
-
-  <!-- A: neat row -->
-  <div class="sec va">
-    <div class="wrap">
-      <div class="sh">
-        <p class="eye">See it in action</p>
-        <h2>Everything at a glance.</h2>
-        <p>Your day, your debts, and your chores — all in one clean dashboard.</p>
-      </div>
-      <div class="ph-row">
-        <div class="pf"><div class="isle"></div><div class="pfc"><div id="ss-home-a"></div></div><div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div></div>
-        <div class="pf"><div class="isle"></div><div class="pfc"><div id="ss-fin-a"></div></div><div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div></div>
-        <div class="pf"><div class="isle"></div><div class="pfc"><div id="ss-chores-a"></div></div><div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- B: staggered on blue -->
-  <div class="ss-b vb">
+  <div class="ss-b">
     <div class="sec">
       <div class="wrap">
         <div class="sh">
@@ -379,63 +241,18 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:42px 48px}
           <p>Beautiful, fast, and built for how your house actually works.</p>
         </div>
         <div class="ph-row-b">
-          <div class="pf"><div class="isle"></div><div class="pfc"><div id="ss-home-b"></div></div><div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div></div>
-          <div class="pf lg"><div class="isle"></div><div class="pfc"><div id="ss-fin-b"></div></div><div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div></div>
-          <div class="pf"><div class="isle"></div><div class="pfc"><div id="ss-chores-b"></div></div><div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div></div>
+          <div class="pf"><div class="isle"></div><div class="pfc"><div id="ss-home"></div></div><div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div></div>
+          <div class="pf lg"><div class="isle"></div><div class="pfc"><div id="ss-fin"></div></div><div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div></div>
+          <div class="pf"><div class="isle"></div><div class="pfc"><div id="ss-chores"></div></div><div class="tbar"><span class="ti">☰</span><span class="ti">$</span><div class="th">🏠</div><span class="ti">🛒</span><span class="ti">⚙</span></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════
-     HOUSE PASS
-     ═══════════════════════════════════ -->
+<!-- HOUSE PASS -->
 <section id="house-pass">
-
-  <!-- A: two cards -->
-  <div class="sec sec-w va">
-    <div class="wrap">
-      <div class="sh">
-        <p class="eye">Pricing</p>
-        <h2>Free to start. Powerful with House Pass.</h2>
-        <p>Everything you need to get your house sorted is free. House Pass is for houses that want to go further.</p>
-      </div>
-      <div class="pgrid">
-        <div class="pc">
-          <h3>Free</h3>
-          <p class="pdesc">For houses just getting started</p>
-          <div class="pprice">$0</div>
-          <p class="pper">forever free</p>
-          <ul class="plist">
-            <li>Up to 8 housemates</li>
-            <li>Chores + House Fairness scoring</li>
-            <li>Bill splitting &amp; Finance</li>
-            <li>Shared shopping list</li>
-            <li>House Messenger &amp; Calendar</li>
-          </ul>
-        </div>
-        <div class="pc pro">
-          <h3>House Pass ★</h3>
-          <p class="pdesc">For houses that want more power</p>
-          <div class="pprice">Coming soon</div>
-          <p class="pper">per house / month</p>
-          <ul class="plist">
-            <li>Everything in Free</li>
-            <li>Recurring bills automation</li>
-            <li>Weekly role lock for chores</li>
-            <li>Custom assignees per chore</li>
-            <li>Multiple houses</li>
-            <li>Calendar sync (Google/Apple)</li>
-            <li>Custom Alfred personalities</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- B: free/pro cards (same as A) -->
-  <div class="sec sec-w vb">
+  <div class="sec sec-w">
     <div class="wrap">
       <div class="sh">
         <p class="eye">Pricing</p>
@@ -476,9 +293,7 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:42px 48px}
   </div>
 </section>
 
-<!-- ═══════════════════════════════════
-     FAQ
-     ═══════════════════════════════════ -->
+<!-- FAQ -->
 <section id="faq" class="sec">
   <div class="wrap">
     <div class="sh"><p class="eye">FAQ</p><h2>Common questions.</h2></div>
@@ -518,23 +333,13 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:42px 48px}
     <ul class="flinks">
       <li><a href="./app-store/support.html">Support</a></li>
       <li><a href="./app-store/privacy.html">Privacy Policy</a></li>
-      <li><a href="/cdn-cgi/l/email-protection#1a696f6a6a75686e5a7c7b73687f74756f7d72347b6a6a">Contact</a></li>
+      <li><a href="./app-store/support.html">Contact</a></li>
     </ul>
     <p class="fcopy">© 2026 FairEnough. All rights reserved.</p>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* ── VARIANT ── */
-function sv(v){
-  document.body.dataset.v=v;
-  document.querySelectorAll('#sw button').forEach((b,i)=>b.classList.toggle('on',(v==='A'&&i===0)||(v==='B'&&i===1)));
-  localStorage.setItem('fe-v',v);
-  window.scrollTo({top:0});
-}
-const sv0=localStorage.getItem('fe-v');
-if(sv0) sv(sv0);
-
+<script>
 /* ── FAQ ── */
 document.querySelectorAll('.fq').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
 
@@ -636,10 +441,9 @@ function chores(id){
   </div>`;
 }
 
-// Populate all phone screens
-['ph-home-a','ph-home-b','ss-home-a','ss-home-b'].forEach(home);
-['ph-fin-b','ss-fin-a','ss-fin-b'].forEach(finance);
-['ph-chores-b','ss-chores-a','ss-chores-b'].forEach(chores);
+['ph-home','ss-home'].forEach(home);
+['ph-fin','ss-fin'].forEach(finance);
+['ph-chores','ss-chores'].forEach(chores);
 </script>
 </body>
 </html>
