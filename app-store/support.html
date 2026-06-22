@@ -1,124 +1,203 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sorted Support</title>
-    <style>
-      :root {
-        --bg: #f4f6fa;
-        --card: #ffffff;
-        --text: #1c2533;
-        --muted: #667085;
-        --accent: #2f5d8a;
-        --border: #d9e2ec;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FairEnough — Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F5F7FB; --surface: #fff; --panel: #E9EEF7;
+  --text: #1C2330; --muted: #687387; --border: #DCE3EF;
+  --accent: #1A73E8; --as: #E3EEFF; --am: #7FA9EA;
+  --head: 'Plus Jakarta Sans', sans-serif;
+  --body: 'Manrope', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--body); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; }
 
-      * {
-        box-sizing: border-box;
-      }
+/* NAV */
+nav { background: rgba(245,247,251,.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: var(--head); font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -.5px; }
+nav ul { display: flex; gap: 28px; list-style: none; }
+nav ul a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color .15s; }
+nav ul a:hover { color: var(--text); }
+.nav-active { color: var(--accent) !important; }
+.btn-dl { background: var(--accent); color: #fff; font-family: var(--body); font-size: 14px; font-weight: 600; padding: 10px 22px; border-radius: 10px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
 
-      body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: linear-gradient(180deg, #eef3f9 0%, var(--bg) 100%);
-        color: var(--text);
-      }
+/* PAGE HEADER */
+.page-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 48px; }
+.page-header-inner { max-width: 1100px; margin: 0 auto; }
+.breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: var(--accent); font-weight: 500; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { opacity: .4; }
+.page-header h1 { font-family: var(--head); font-size: 36px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; margin-bottom: 8px; }
+.page-header p { font-size: 15px; color: var(--muted); }
 
-      .wrap {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 56px 20px;
-      }
+/* LAYOUT */
+.layout { max-width: 1100px; margin: 0 auto; padding: 48px 48px 96px; display: grid; grid-template-columns: 220px 1fr; gap: 56px; align-items: start; }
 
-      .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 28px;
-        box-shadow: 0 16px 40px rgba(28, 37, 51, 0.08);
-      }
+/* SIDEBAR */
+.sidebar { position: sticky; top: 88px; }
+.sidebar-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+.sidebar-nav a { display: block; font-size: 14px; font-weight: 500; color: var(--muted); padding: 6px 10px; border-radius: 8px; transition: all .15s; }
+.sidebar-nav a:hover { background: var(--panel); color: var(--text); }
+.sidebar-nav a.active { background: var(--as); color: var(--accent); font-weight: 600; }
+.sidebar-divider { height: 1px; background: var(--border); margin: 14px 0; }
+.sidebar-link { font-size: 13px; color: var(--accent); font-weight: 500; padding: 6px 10px; display: block; }
+.sidebar-link:hover { text-decoration: underline; }
 
-      h1 {
-        margin: 0 0 10px;
-        font-size: 34px;
-        line-height: 1.1;
-      }
+/* MAIN CONTENT */
+.main { min-width: 0; }
 
-      p {
-        margin: 0 0 16px;
-        font-size: 16px;
-        line-height: 1.6;
-      }
+/* SECTIONS */
+.support-section { padding: 0 0 40px; margin-bottom: 40px; border-bottom: 1px solid var(--border); }
+.support-section:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.support-section h2 { font-family: var(--head); font-size: 22px; font-weight: 800; margin-bottom: 6px; letter-spacing: -.3px; }
+.support-section > p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
 
-      .muted {
-        color: var(--muted);
-      }
+/* CONTACT BLOCK */
+.contact-block { background: var(--as); border: 1px solid #c4d9f8; border-radius: 14px; padding: 22px 24px; display: flex; align-items: flex-start; gap: 16px; }
+.contact-icon { width: 40px; height: 40px; border-radius: 11px; background: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-block h3 { font-family: var(--head); font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+.contact-block p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+.contact-block a { color: var(--accent); font-weight: 600; }
+.contact-block a:hover { text-decoration: underline; }
 
-      .box {
-        margin-top: 24px;
-        padding: 18px;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        background: #f9fbfe;
-      }
+/* INCLUDE LIST */
+.include-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.include-list li { font-size: 15px; color: var(--muted); display: flex; gap: 12px; align-items: flex-start; line-height: 1.55; }
+.include-list li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
-      .label {
-        margin-bottom: 8px;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
+/* LEGAL LINK */
+.legal-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--accent); border: 1.5px solid var(--border); padding: 10px 18px; border-radius: 10px; transition: all .15s; }
+.legal-link:hover { border-color: var(--accent); background: var(--as); }
 
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
+/* FOOTER */
+footer { background: var(--text); color: rgba(255,255,255,.5); padding: 40px 48px; }
+.ft { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+.ft-logo { font-family: var(--head); font-size: 17px; font-weight: 800; color: #fff; }
+.ft-links { display: flex; gap: 22px; list-style: none; }
+.ft-links a { font-size: 13px; color: rgba(255,255,255,.5); }
+.ft-links a:hover { color: #fff; }
+.ft-copy { font-size: 12px; }
 
-      a:hover {
-        text-decoration: underline;
-      }
+/* MOBILE */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  nav ul { display: none; }
+  .page-header { padding: 32px 20px; }
+  .layout { grid-template-columns: 1fr; gap: 32px; padding: 32px 20px 64px; }
+  .sidebar { position: static; }
+  footer { padding: 32px 20px; }
+}
+</style>
+</head>
+<body>
 
-      ul {
-        margin: 0;
-        padding-left: 20px;
-        color: var(--text);
-      }
-    </style>
-  </head>
-  <body>
-    <main class="wrap">
-      <section class="card">
-        <p class="label">Support</p>
-        <h1>Sorted Support</h1>
-        <p class="muted">
-          Help with account issues, bugs, billing questions, and general app support.
-        </p>
+<nav>
+  <a href="../index.html" class="logo">FairEnough</a>
+  <ul>
+    <li><a href="../index.html#features">Features</a></li>
+    <li><a href="../index.html#house-pass">Pricing</a></li>
+    <li><a href="../index.html#faq">FAQ</a></li>
+    <li><a href="support.html" class="nav-active">Support</a></li>
+  </ul>
+  <a href="#" class="btn-dl">
+    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    Download
+  </a>
+</nav>
 
-        <div class="box">
-          <p class="label">Contact</p>
-          <p>Email: <a href="mailto:support@fairenough.app">support@fairenough.app</a></p>
-          <p class="muted">Typical response time: 2 to 3 business days.</p>
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="../index.html">FairEnough</a>
+      <span>/</span>
+      Support
+    </div>
+    <h1>Support</h1>
+    <p>Help with account issues, bug reports, billing, and anything else.</p>
+  </div>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <p class="sidebar-label">On this page</p>
+    <ul class="sidebar-nav">
+      <li><a href="#contact" class="active">Contact</a></li>
+      <li><a href="#include">What to include</a></li>
+      <li><a href="#legal">Legal</a></li>
+    </ul>
+    <div class="sidebar-divider"></div>
+    <a href="privacy.html" class="sidebar-link">Privacy Policy →</a>
+    <a href="../index.html" class="sidebar-link">Back to FairEnough →</a>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div id="contact" class="support-section">
+      <p class="section-label">Get in touch</p>
+      <h2>Contact support</h2>
+      <p>For account issues, billing questions, bug reports, or anything else — reach out by email and we'll get back to you.</p>
+      <div class="contact-block">
+        <div class="contact-icon">
+          <svg width="19" height="19" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
-
-        <div class="box">
-          <p class="label">Include</p>
-          <ul>
-            <li>Your device model and iOS version</li>
-            <li>A short description of the problem</li>
-            <li>Screenshots if relevant</li>
-          </ul>
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:support@fairenough.app">support@fairenough.app</a></p>
+          <p>Typical response time: 2–3 business days.</p>
         </div>
+      </div>
+    </div>
 
-        <div class="box">
-          <p class="label">Privacy</p>
-          <p>
-            Read the <a href="./privacy.html">Sorted Privacy Policy</a>.
-          </p>
-        </div>
-      </section>
-    </main>
-  </body>
+    <div id="include" class="support-section">
+      <p class="section-label">Before you write in</p>
+      <h2>What to include</h2>
+      <p>To help us resolve your issue faster, include the following in your message:</p>
+      <ul class="include-list">
+        <li>Your device model and iOS version</li>
+        <li>Your account email address</li>
+        <li>A short description of the problem</li>
+        <li>Screenshots or a screen recording if relevant</li>
+      </ul>
+    </div>
+
+    <div id="legal" class="support-section">
+      <p class="section-label">Legal</p>
+      <h2>Privacy Policy</h2>
+      <p>Read our Privacy Policy for full details on how we collect, use, and protect your data.</p>
+      <a href="privacy.html" class="legal-link">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        FairEnough Privacy Policy
+      </a>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="ft">
+    <div class="ft-logo">FairEnough</div>
+    <ul class="ft-links">
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="mailto:support@fairenough.app">Contact</a></li>
+    </ul>
+    <p class="ft-copy">© 2026 FairEnough. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
 </html>

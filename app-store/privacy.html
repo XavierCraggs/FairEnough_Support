@@ -1,145 +1,237 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sorted Privacy Policy</title>
-    <style>
-      :root {
-        --bg: #f4f6fa;
-        --card: #ffffff;
-        --text: #1c2533;
-        --muted: #667085;
-        --accent: #2f5d8a;
-        --border: #d9e2ec;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FairEnough — Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F5F7FB; --surface: #fff; --panel: #E9EEF7;
+  --text: #1C2330; --muted: #687387; --border: #DCE3EF;
+  --accent: #1A73E8; --as: #E3EEFF;
+  --head: 'Plus Jakarta Sans', sans-serif;
+  --body: 'Manrope', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--body); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; }
 
-      * {
-        box-sizing: border-box;
-      }
+/* NAV */
+nav { background: rgba(245,247,251,.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: var(--head); font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -.5px; }
+nav ul { display: flex; gap: 28px; list-style: none; }
+nav ul a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color .15s; }
+nav ul a:hover { color: var(--text); }
+.btn-dl { background: var(--accent); color: #fff; font-family: var(--body); font-size: 14px; font-weight: 600; padding: 10px 22px; border-radius: 10px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
 
-      body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: linear-gradient(180deg, #eef3f9 0%, var(--bg) 100%);
-        color: var(--text);
-      }
+/* PAGE HEADER */
+.page-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 48px; }
+.page-header-inner { max-width: 1100px; margin: 0 auto; }
+.breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: var(--accent); font-weight: 500; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { opacity: .4; }
+.page-header h1 { font-family: var(--head); font-size: 36px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; margin-bottom: 8px; }
+.page-header .updated { font-size: 13px; color: var(--muted); }
 
-      .wrap {
-        max-width: 860px;
-        margin: 0 auto;
-        padding: 56px 20px;
-      }
+/* LAYOUT */
+.layout { max-width: 1100px; margin: 0 auto; padding: 48px 48px 96px; display: grid; grid-template-columns: 220px 1fr; gap: 56px; align-items: start; }
 
-      .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 28px;
-        box-shadow: 0 16px 40px rgba(28, 37, 51, 0.08);
-      }
+/* SIDEBAR */
+.sidebar { position: sticky; top: 88px; }
+.sidebar-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+.sidebar-nav a { display: block; font-size: 14px; font-weight: 500; color: var(--muted); padding: 6px 10px; border-radius: 8px; transition: all .15s; }
+.sidebar-nav a:hover { background: var(--panel); color: var(--text); }
+.sidebar-nav a.active { background: var(--as); color: var(--accent); font-weight: 600; }
+.sidebar-divider { height: 1px; background: var(--border); margin: 14px 0; }
+.sidebar-link { font-size: 13px; color: var(--accent); font-weight: 500; padding: 6px 10px; display: block; }
+.sidebar-link:hover { text-decoration: underline; }
 
-      h1, h2 {
-        line-height: 1.2;
-      }
+/* MAIN CONTENT */
+.main { min-width: 0; }
 
-      h1 {
-        margin: 0 0 8px;
-        font-size: 34px;
-      }
+/* SECTIONS */
+.prose-section { padding: 0 0 40px; margin-bottom: 40px; border-bottom: 1px solid var(--border); }
+.prose-section:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.prose-section h2 { font-family: var(--head); font-size: 22px; font-weight: 800; margin-bottom: 10px; letter-spacing: -.3px; }
+.prose-section p { font-size: 15px; color: var(--muted); line-height: 1.75; }
+.prose-section p + p { margin-top: 10px; }
+.prose-section a { color: var(--accent); font-weight: 500; }
+.prose-section a:hover { text-decoration: underline; }
+.prose-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-top: 12px; }
+.prose-list li { font-size: 15px; color: var(--muted); display: flex; gap: 12px; align-items: flex-start; line-height: 1.55; }
+.prose-list li::before { content: '–'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
-      h2 {
-        margin: 28px 0 10px;
-        font-size: 20px;
-      }
+/* FOOTER */
+footer { background: var(--text); color: rgba(255,255,255,.5); padding: 40px 48px; }
+.ft { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+.ft-logo { font-family: var(--head); font-size: 17px; font-weight: 800; color: #fff; }
+.ft-links { display: flex; gap: 22px; list-style: none; }
+.ft-links a { font-size: 13px; color: rgba(255,255,255,.5); }
+.ft-links a:hover { color: #fff; }
+.ft-copy { font-size: 12px; }
 
-      p, li {
-        font-size: 15px;
-        line-height: 1.65;
-      }
+/* MOBILE */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  nav ul { display: none; }
+  .page-header { padding: 32px 20px; }
+  .layout { grid-template-columns: 1fr; gap: 32px; padding: 32px 20px 64px; }
+  .sidebar { position: static; }
+  footer { padding: 32px 20px; }
+}
+</style>
+</head>
+<body>
 
-      .muted {
-        color: var(--muted);
-      }
+<nav>
+  <a href="../index.html" class="logo">FairEnough</a>
+  <ul>
+    <li><a href="../index.html#features">Features</a></li>
+    <li><a href="../index.html#house-pass">Pricing</a></li>
+    <li><a href="../index.html#faq">FAQ</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+  <a href="#" class="btn-dl">
+    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    Download
+  </a>
+</nav>
 
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="../index.html">FairEnough</a>
+      <span>/</span>
+      Privacy Policy
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: March 12, 2026</p>
+  </div>
+</div>
 
-      a:hover {
-        text-decoration: underline;
-      }
+<div class="layout">
 
-      ul {
-        margin: 0;
-        padding-left: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="wrap">
-      <section class="card">
-        <p class="muted">Last updated: March 12, 2026</p>
-        <h1>Sorted Privacy Policy</h1>
-        <p>
-          Sorted is a sharehouse management app that helps housemates coordinate chores,
-          bills, shopping lists, notifications, and household planning.
-        </p>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <p class="sidebar-label">On this page</p>
+    <ul class="sidebar-nav">
+      <li><a href="#overview" class="active">Overview</a></li>
+      <li><a href="#collect">What we collect</a></li>
+      <li><a href="#use">How we use it</a></li>
+      <li><a href="#third-party">Third parties</a></li>
+      <li><a href="#sharing">Data sharing</a></li>
+      <li><a href="#retention">Retention</a></li>
+      <li><a href="#choices">Your choices</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="sidebar-divider"></div>
+    <a href="support.html" class="sidebar-link">Support →</a>
+    <a href="../index.html" class="sidebar-link">Back to FairEnough →</a>
+  </aside>
 
-        <h2>Information We Collect</h2>
-        <ul>
-          <li>Account information such as name, email address, phone number, and profile photo</li>
-          <li>Household data such as chores, bills, shopping items, messages, events, and settings</li>
-          <li>Payment details you choose to save for housemate repayments</li>
-          <li>Device and notification information needed to deliver app notifications</li>
-          <li>Purchase and subscription information related to premium features</li>
-        </ul>
+  <!-- MAIN -->
+  <main class="main">
 
-        <h2>How We Use Information</h2>
-        <ul>
-          <li>To operate the app and provide household coordination features</li>
-          <li>To sync your account and household data across devices</li>
-          <li>To send in-app and push notifications you enable</li>
-          <li>To manage premium access, billing, and support requests</li>
-          <li>To maintain app security, reliability, and performance</li>
-        </ul>
+    <div id="overview" class="prose-section">
+      <p class="section-label">Overview</p>
+      <h2>About this policy</h2>
+      <p>FairEnough is a sharehouse management app that helps housemates coordinate chores, bills, shopping lists, notifications, and household planning. This policy explains what information we collect and how we use it.</p>
+    </div>
 
-        <h2>Third-Party Services</h2>
-        <p>Sorted may use third-party services to operate the app, including:</p>
-        <ul>
-          <li>Firebase for authentication, database, and storage</li>
-          <li>Expo services for app infrastructure and notifications</li>
-          <li>RevenueCat and Apple for subscription and purchase handling</li>
-        </ul>
+    <div id="collect" class="prose-section">
+      <p class="section-label">Data collection</p>
+      <h2>Information we collect</h2>
+      <ul class="prose-list">
+        <li>Account information such as name, email address, phone number, and profile photo</li>
+        <li>Household data such as chores, bills, shopping items, messages, events, and settings</li>
+        <li>Payment details you choose to save for housemate repayments</li>
+        <li>Device and notification information needed to deliver app notifications</li>
+        <li>Purchase and subscription information related to premium features</li>
+      </ul>
+    </div>
 
-        <h2>Data Sharing</h2>
-        <p>
-          We do not sell your personal information. Information is shared only as needed to run
-          the app, process purchases, deliver notifications, comply with legal obligations, or
-          provide support.
-        </p>
+    <div id="use" class="prose-section">
+      <p class="section-label">Data use</p>
+      <h2>How we use information</h2>
+      <ul class="prose-list">
+        <li>To operate the app and provide household coordination features</li>
+        <li>To sync your account and household data across devices</li>
+        <li>To send in-app and push notifications you enable</li>
+        <li>To manage premium access, billing, and support requests</li>
+        <li>To maintain app security, reliability, and performance</li>
+      </ul>
+    </div>
 
-        <h2>Data Retention</h2>
-        <p>
-          We retain information for as long as needed to provide the app, maintain records,
-          resolve disputes, and meet legal obligations. Data associated with your account or
-          household may remain in backups or logs for a limited period.
-        </p>
+    <div id="third-party" class="prose-section">
+      <p class="section-label">Third-party services</p>
+      <h2>Services we use</h2>
+      <p>FairEnough may use third-party services to operate the app, including:</p>
+      <ul class="prose-list">
+        <li>Firebase for authentication, database, and storage</li>
+        <li>Expo services for app infrastructure and notifications</li>
+        <li>RevenueCat and Apple for subscription and purchase handling</li>
+      </ul>
+    </div>
 
-        <h2>Your Choices</h2>
-        <ul>
-          <li>You can update profile and household information in the app</li>
-          <li>You can control notification preferences in the app and on your device</li>
-          <li>You can contact support to request help with your account</li>
-        </ul>
+    <div id="sharing" class="prose-section">
+      <p class="section-label">Data sharing</p>
+      <h2>Who we share data with</h2>
+      <p>We do not sell your personal information. Information is shared only as needed to run the app, process purchases, deliver notifications, comply with legal obligations, or provide support.</p>
+    </div>
 
-        <h2>Contact</h2>
-        <p>
-          For privacy or support questions, contact
-          <a href="mailto:support@fairenough.app">support@fairenough.app</a>.
-        </p>
-      </section>
-    </main>
-  </body>
+    <div id="retention" class="prose-section">
+      <p class="section-label">Data retention</p>
+      <h2>How long we keep data</h2>
+      <p>We retain information for as long as needed to provide the app, maintain records, resolve disputes, and meet legal obligations. Data associated with your account or household may remain in backups or logs for a limited period.</p>
+    </div>
+
+    <div id="choices" class="prose-section">
+      <p class="section-label">Your rights</p>
+      <h2>Your choices</h2>
+      <ul class="prose-list">
+        <li>You can update profile and household information in the app</li>
+        <li>You can control notification preferences in the app and on your device</li>
+        <li>You can contact support to request help with your account</li>
+      </ul>
+    </div>
+
+    <div id="contact" class="prose-section">
+      <p class="section-label">Contact</p>
+      <h2>Questions?</h2>
+      <p>For privacy or support questions, email <a href="mailto:support@fairenough.app">support@fairenough.app</a> or visit the <a href="support.html">Support page</a>.</p>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="ft">
+    <div class="ft-logo">FairEnough</div>
+    <ul class="ft-links">
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="mailto:support@fairenough.app">Contact</a></li>
+    </ul>
+    <p class="ft-copy">© 2026 FairEnough. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// Highlight active sidebar link on scroll
+const sections = document.querySelectorAll('[id]');
+const links = document.querySelectorAll('.sidebar-nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+}, { passive: true });
+</script>
+</body>
 </html>
