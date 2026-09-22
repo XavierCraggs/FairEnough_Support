@@ -182,10 +182,10 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:42px 48px}
             <div style="font-size:13px;color:#7A6F96;margin-top:4px">28-day average: 5 pts</div>
             <div style="width:200px;height:6px;background:#D0BFFD;border-radius:6px;margin-top:16px;position:relative">
               <div style="position:absolute;left:12%;top:-10px;display:flex;gap:-4px">
-                <div style="width:24px;height:24px;border-radius:50%;background:#A78BFA;border:2px solid white;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:white">N</div>
+                <div style="width:24px;height:24px;border-radius:50%;background:#A78BFA;border:2px solid white;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:white">M</div>
               </div>
               <div style="position:absolute;right:8%;top:-10px">
-                <div style="width:24px;height:24px;border-radius:50%;background:#EEE8FF;border:2px solid white;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#A78BFA">O</div>
+                <div style="width:24px;height:24px;border-radius:50%;background:#EEE8FF;border:2px solid white;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#A78BFA">K</div>
               </div>
             </div>
           </div>
@@ -357,8 +357,8 @@ function home(id){
   el.style.cssText=`padding:8px 12px 56px;background:${C.bg};height:100%;overflow:hidden`;
   el.innerHTML=`
   <div style="display:flex;gap:8px;align-items:center;margin-bottom:13px">
-    ${av('X',32)}
-    <div><div style="font-size:9px;color:${C.mut}">Welcome back</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;color:${C.acc}">Xavier</div></div>
+    ${av('J',32)}
+    <div><div style="font-size:9px;color:${C.mut}">Welcome back</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;color:${C.acc}">Jordan</div></div>
     <div style="margin-left:auto;background:${C.pnl};color:${C.acc};font-size:7.5px;font-weight:700;padding:2px 7px;border-radius:20px">★ Premium</div>
   </div>
   <div style="display:flex;justify-content:space-between;margin-bottom:11px">
@@ -394,7 +394,7 @@ function finance(id){
     <div style="background:${C.pnl};border-radius:9px;padding:7px;display:flex;justify-content:space-between;align-items:center"><div style="font-size:9px;font-weight:600">Net</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;color:${C.ok}">+$303.96</div></div>
   `)}
   ${card('For You',`
-    ${[['will','147.13'],['Nadia','118.95'],['Robert','36.08'],['Olivia','1.80']].map(([n,a])=>`
+    ${[['Maya','147.13'],['Theo','118.95'],['Priya','36.08'],['Kai','1.80']].map(([n,a])=>`
     <div style="display:flex;align-items:center;gap:7px;padding:4px 0;border-bottom:1px solid ${C.bdr}">
       ${av(n[0].toUpperCase())}
       <div style="flex:1"><div style="font-size:9px;font-weight:600;color:${C.acc}">${n}</div><div style="font-size:7.5px;color:${C.mut}">Pays you</div></div>
@@ -412,10 +412,10 @@ function chores(id){
     <div style="font-size:8px;color:${C.mut};margin-bottom:8px">28-day average: 5 pts</div>
     <div style="height:3px;background:${C.pnl};border-radius:3px;position:relative;margin:10px 0 6px">
       <div style="position:absolute;left:10%;top:-9px;display:flex;align-items:center">
-        ${av('N',18)}<div style="margin-left:-5px">${av('R',18)}</div>
+        ${av('M',18)}<div style="margin-left:-5px">${av('T',18)}</div>
         <div style="background:${C.bdr};border-radius:8px;font-size:7px;font-weight:700;color:${C.acc};padding:1px 3px;margin-left:-4px">+2</div>
       </div>
-      <div style="position:absolute;right:8%;top:-9px">${av('O',18)}</div>
+      <div style="position:absolute;right:8%;top:-9px">${av('K',18)}</div>
     </div>
   `)}
   <div style="background:${C.pnl};border-radius:11px;padding:3px;display:flex;margin-bottom:8px">
