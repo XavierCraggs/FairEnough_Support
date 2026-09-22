@@ -115,6 +115,57 @@ footer{background:var(--text);color:rgba(255,255,255,.5);padding:42px 48px}
 .flinks a{font-size:13px;color:rgba(255,255,255,.5);transition:color .15s}
 .flinks a:hover{color:#fff}
 .fcopy{font-size:12px}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  /* Nav: no room for four links plus a logo and a button on a phone width —
+     every other page on this site already drops them here, this just
+     brings the landing page in line with that pattern. */
+  nav { padding: 0 20px; }
+  nav ul { display: none; }
+
+  .wrap { padding: 0 20px; }
+  .sec { padding: 56px 0; }
+  .sh h2 { font-size: 28px; }
+
+  /* Hero: 66px was set for a desktop-width column and overflows a phone
+     screen outright. Letter-spacing scales down with it — the value below
+     was tuned for the larger size and reads as too cramped at 40px. */
+  .hb { padding: 64px 20px 0; }
+  .hb h1 { font-size: 40px; letter-spacing: -1.2px; }
+  .hb .sub { font-size: 16px; max-width: 320px; }
+
+  /* Three ~250px-wide phones side by side need roughly 800px of width they
+     do not have here. The mockups' own internal text runs as small as 7px
+     at full size, so shrinking three of them to fit is not a real option —
+     they would stop being legible before they stopped overlapping. Keep the
+     one phone the hero actually needs to make its point, drop the other two. */
+  .hb-phones { margin-top: 36px; }
+  .hb-phones .pf:not(.lg) { display: none; }
+  .hb-phones .pf.lg { width: 240px; height: 488px; transform: none; }
+
+  /* Features: the two-column row (text one side, visual the other) becomes
+     one column, and the alternating left/right order that reads well
+     side-by-side on desktop has no purpose once everything is stacked. */
+  .frow { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
+  .frow.rev > :first-child, .frow.rev > :last-child { order: initial; }
+  .fnum { font-size: 38px; }
+  .fvis { height: 180px; }
+
+  /* Screenshots: same three-phone width problem as the hero, but this
+     section's whole job is showing three different screens, so hiding two
+     of them the way the hero does would defeat the point. Scroll instead —
+     each phone stays fully legible, the visitor swipes across. */
+  .ph-row-b { overflow-x: auto; justify-content: flex-start; gap: 20px; padding: 4px 20px 12px; margin: 0 -20px; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
+  .ph-row-b .pf { flex-shrink: 0; transform: none; scroll-snap-align: center; }
+
+  /* Pricing: same fixed two-column grid problem as the features rows. */
+  .pgrid { grid-template-columns: 1fr; max-width: 380px; }
+
+  /* Footer: already flex-wrap, but centred stacking reads better than
+     left-aligned wrapping once it drops to a single column. */
+  .fi2 { flex-direction: column; text-align: center; }
+}
 </style>
 </head>
 <body>
